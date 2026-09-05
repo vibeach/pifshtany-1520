@@ -12,7 +12,71 @@
 </head>
 <body>
 
-<!-- top nav -->
+<!-- SVG icon symbols shared across the page (mirrors deck's blue outline icons) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-math" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 6h6"/><path d="M4 10h6"/><path d="M7 4v8"/>
+      <path d="M14 6l6 6M20 6l-6 6"/>
+      <path d="M4 18h6"/><circle cx="17" cy="18" r="2.6"/>
+    </symbol>
+    <symbol id="i-team" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="9" cy="8" r="3"/>
+      <circle cx="17" cy="9" r="2.4"/>
+      <path d="M3 20c0-3.5 2.7-5.5 6-5.5S15 16.5 15 20"/>
+      <path d="M13.5 15.4c1-.6 2.2-.9 3.5-.9 2.8 0 5 1.8 5 4.5"/>
+    </symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M8 4h8v4a4 4 0 0 1-8 0V4z"/>
+      <path d="M4 5h4v3a4 4 0 0 1-4-3z"/>
+      <path d="M16 5h4a4 4 0 0 1-4 3V5z"/>
+      <path d="M10 13h4v3l1 4H9l1-4v-3z"/>
+    </symbol>
+    <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <polygon points="12 3 15 9 21 10 16.5 14.5 18 21 12 17.5 6 21 7.5 14.5 3 10 9 9"/>
+    </symbol>
+    <symbol id="i-monitor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="4" width="18" height="12" rx="2"/>
+      <path d="M8 20h8M12 16v4"/>
+    </symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 5h16v10H8l-4 4V5z"/>
+      <path d="M8 9h8M8 12h5"/>
+    </symbol>
+    <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 5c3-1 6-1 8 1v14c-2-2-5-2-8-1V5z"/>
+      <path d="M20 5c-3-1-6-1-8 1v14c2-2 5-2 8-1V5z"/>
+    </symbol>
+    <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 20l3-3M14 4c4 0 6 2 6 6l-8 8-4-4L14 4z"/>
+      <circle cx="15" cy="9" r="1.4"/>
+      <path d="M4 20c0-3 2-5 5-5"/>
+    </symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 21s-7-6-7-12a7 7 0 1 1 14 0c0 6-7 12-7 12z"/>
+      <circle cx="12" cy="9" r="2.5"/>
+    </symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 4h4l2 5-2.5 1.5c1 3 3 5 6 6L16 14l5 2v4c0 .5-.5 1-1 1-9 0-16-7-16-16 0-.5.5-1 1-1z"/>
+    </symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="5" width="18" height="14" rx="2"/>
+      <path d="M4 7l8 6 8-6"/>
+    </symbol>
+    <symbol id="i-tg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 11l16-6-3 14-5-4-3 4-1-6 9-6-13 4z"/>
+    </symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="5" width="18" height="15" rx="2"/>
+      <path d="M8 3v4M16 3v4M3 10h18"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- Sticky nav -->
 <nav class="topnav">
   <a class="brand" href="#top">
     <span class="brand-mark">π</span>
@@ -21,121 +85,150 @@
   <div class="topnav-links">
     <a href="#system">Система</a>
     <a href="#school">Школе</a>
+    <a href="#results">Результаты</a>
     <a href="#launch">Запуск</a>
     <a href="#pricing">Стоимость</a>
     <a href="#economy">Экономика</a>
     <a href="#contact">Контакты</a>
-    <a href="./deck.html" class="topnav-cta">Смотреть презентацию →</a>
+    <a href="./deck.html" class="topnav-cta">Презентация →</a>
   </div>
 </nav>
 
-<!-- HERO — slide 1 -->
+<!-- HERO (slide 1) -->
 <header id="top" class="hero">
-  <div class="hero-inner">
-    <div class="hero-badge">Коммерческое предложение · 2025</div>
+  <div class="hero-left">
+    <span class="hero-tag">Коммерческое предложение</span>
     <h1 class="hero-title">Пифагоровы&nbsp;штаны</h1>
-    <p class="hero-sub">Система олимпиадного математического образования<br>для начальной и средней школы</p>
-    <p class="hero-tradition">В традициях московской математической культуры</p>
-    <div class="hero-for">Для Школы № 1520 имени&nbsp;Капцовых</div>
+    <p class="hero-sub">Система олимпиадного математического образования для начальной и средней школы</p>
+    <div class="hero-tradition-wrap">
+      <p class="hero-tradition">В традициях московской математической культуры</p>
+    </div>
     <div class="hero-cta">
-      <a href="#system" class="btn btn-primary">Узнать больше</a>
+      <a href="#system" class="btn btn-primary">Читать предложение</a>
       <a href="./deck.html" class="btn btn-ghost">Открыть презентацию</a>
     </div>
   </div>
-  <div class="hero-curve" aria-hidden="true"></div>
+  <div class="hero-photo-wrap">
+    <div class="hero-photo"></div>
+    <div class="hero-badge-abs">Для Школы № 1520 имени Капцовых</div>
+  </div>
+  <div class="hero-slidenum">01</div>
 </header>
 
-<!-- SLIDE 2 — SIX PILLARS -->
-<section id="system" class="section section-pillars">
-  <div class="section-head">
-    <div class="eyebrow">02 · Кто мы</div>
-    <h2>Кто стоит за системой?</h2>
-    <p class="lede">«Пифагоровы штаны» — математическая школа для детей 5–15 лет.</p>
-  </div>
+<!-- SLIDE 2 — SYSTEM / PILLARS -->
+<section id="system" class="slide">
+  <div class="slide-num">02</div>
+  <div class="slide-badge">Для Школы №&nbsp;1520<br>имени Капцовых</div>
+  <h2 class="slide-title">Кто стоит за системой?</h2>
+  <p class="slide-lede">«Пифагоровы штаны» — математическая школа для детей 5–15 лет.</p>
 
   <div class="pillars">
     <article class="pillar">
-      <div class="pillar-num">01</div>
-      <h3>Сильная математика</h3>
-      <p>Занятия по школьной, углублённой и олимпиадной математике — от прочной базы до задач высокого уровня.</p>
+      <div class="pillar-icon"><svg width="26" height="26"><use href="#i-math"/></svg></div>
+      <div class="pillar-body">
+        <h3>Сильная математика</h3>
+        <p>Занятия по школьной, углублённой и олимпиадной математике — от прочной базы до задач высокого уровня.</p>
+      </div>
     </article>
     <article class="pillar">
-      <div class="pillar-num">02</div>
-      <h3>Сильная команда</h3>
-      <p>Методологи и преподаватели с Мехмата МГУ и из ведущих матшкол — математики, которые умеют работать с мотивацией, психологией и особенностями развития ребёнка.</p>
+      <div class="pillar-icon"><svg width="26" height="26"><use href="#i-team"/></svg></div>
+      <div class="pillar-body">
+        <h3>Сильная команда</h3>
+        <p>Методологи и преподаватели с Мехмата МГУ и из ведущих матшкол — математики, которые умеют работать с мотивацией, психологией и особенностями развития ребёнка.</p>
+      </div>
     </article>
     <article class="pillar">
-      <div class="pillar-num">03</div>
-      <h3>Результаты учеников</h3>
-      <p>Успехи на экзаменах, дипломы олимпиад и поступление в ведущие математические классы.</p>
+      <div class="pillar-icon"><svg width="26" height="26"><use href="#i-trophy"/></svg></div>
+      <div class="pillar-body">
+        <h3>Результаты учеников</h3>
+        <p>Успехи на экзаменах, дипломы олимпиад и поступление в ведущие математические классы.</p>
+      </div>
     </article>
     <article class="pillar">
-      <div class="pillar-num">04</div>
-      <h3>Математическая среда</h3>
-      <p>Собственная олимпиада «Пифагоровы штаны», математические фестивали, выездные школы и другие события, которые делают математику частью жизни ребёнка.</p>
+      <div class="pillar-icon"><svg width="26" height="26"><use href="#i-star"/></svg></div>
+      <div class="pillar-body">
+        <h3>Математическая среда</h3>
+        <p>Собственная олимпиада «Пифагоровы штаны», математические фестивали, выездные школы и другие события, которые делают математику частью жизни ребёнка.</p>
+      </div>
     </article>
     <article class="pillar">
-      <div class="pillar-num">05</div>
-      <h3>Своя цифровая платформа</h3>
-      <p>Личные кабинеты, приложение, задания, видеокурсы и материалы для системной работы между занятиями.</p>
+      <div class="pillar-icon"><svg width="26" height="26"><use href="#i-monitor"/></svg></div>
+      <div class="pillar-body">
+        <h3>Своя цифровая платформа</h3>
+        <p>Личные кабинеты, приложение, задания, видеокурсы и материалы для системной работы между занятиями.</p>
+      </div>
     </article>
     <article class="pillar">
-      <div class="pillar-num">06</div>
-      <h3>Профессиональное сообщество учителей</h3>
-      <p>Обучение преподавателей, методическое сопровождение и обмен опытом между учителями сильной математики.</p>
+      <div class="pillar-icon"><svg width="26" height="26"><use href="#i-chat"/></svg></div>
+      <div class="pillar-body">
+        <h3>Профессиональное сообщество учителей</h3>
+        <p>Обучение преподавателей, методическое сопровождение и обмен опытом между учителями сильной математики.</p>
+      </div>
     </article>
   </div>
 
-  <div class="callout">
-    За годы работы мы выстроили систему олимпиадного математического образования, которую прошли десятки тысяч детей. Сегодня мы развиваем партнёрства со школами, помогая им выстраивать олимпиадное направление для своих учеников.
+  <div class="strip">
+    <h3>Система олимпиадного математического образования</h3>
+    <p>За годы работы мы выстроили систему, которую прошли десятки тысяч детей. Сегодня мы развиваем партнёрства со школами, помогая им выстраивать олимпиадное направление для своих учеников.</p>
   </div>
+  <div class="slide-foot">02</div>
 </section>
 
 <!-- SLIDE 3 — WHAT THE SCHOOL GETS -->
-<section id="school" class="section section-school">
-  <div class="section-head">
-    <div class="eyebrow">03 · Партнёрство</div>
-    <h2>Что получает школа?</h2>
-    <p class="lede">Готовая инфраструктура олимпиадного математического образования для начальной и средней школы.</p>
+<div class="slide-tint-wrap">
+<section id="school" class="slide slide-tint">
+  <div class="slide-num">03</div>
+  <div class="slide-badge">Для Школы №&nbsp;1520<br>имени Капцовых</div>
+  <h2 class="slide-title">Что получает школа?</h2>
+  <p class="slide-lede">Готовая инфраструктура олимпиадного математического образования для начальной и средней школы.</p>
+
+  <div class="school-cards">
+    <article class="school-card">
+      <div class="school-card-icon"><svg width="34" height="34"><use href="#i-book"/></svg></div>
+      <div>
+        <h3>Готовая программа и материалы</h3>
+        <p>Последовательная программа занятий, домашние и дополнительные задачи, видеокурсы и методические материалы.</p>
+      </div>
+    </article>
+    <article class="school-card">
+      <div class="school-card-icon"><svg width="34" height="34"><use href="#i-chat"/></svg></div>
+      <div>
+        <h3>Подготовка преподавателей</h3>
+        <p>Обучение педагогов работе по программе и постоянное методическое сопровождение команды «Пифагоровы штаны».</p>
+      </div>
+    </article>
+    <article class="school-card">
+      <div class="school-card-icon"><svg width="34" height="34"><use href="#i-monitor"/></svg></div>
+      <div>
+        <h3>Цифровая платформа</h3>
+        <p>Личные кабинеты учеников и педагогов, задания, видеокурсы и материалы для системной работы между занятиями.</p>
+      </div>
+    </article>
+    <article class="school-card">
+      <div class="school-card-icon"><svg width="34" height="34"><use href="#i-target"/></svg></div>
+      <div>
+        <h3>Олимпиадная траектория</h3>
+        <p>Система подготовки к математическим олимпиадам с учётом возраста и уровня учеников.</p>
+      </div>
+    </article>
   </div>
 
-  <div class="grid-cards">
-    <article class="card">
-      <h3>Готовая программа и материалы</h3>
-      <p>Последовательная программа занятий, домашние и дополнительные задачи, видеокурсы и методические материалы.</p>
-    </article>
-    <article class="card">
-      <h3>Подготовка преподавателей</h3>
-      <p>Обучение педагогов работе по программе и постоянное методическое сопровождение команды «Пифагоровы штаны».</p>
-    </article>
-    <article class="card">
-      <h3>Цифровая платформа</h3>
-      <p>Личные кабинеты учеников и педагогов, задания, видеокурсы и материалы для системной работы между занятиями.</p>
-    </article>
-    <article class="card">
-      <h3>Олимпиадная траектория</h3>
-      <p>Система подготовки к математическим олимпиадам с учётом возраста и уровня учеников.</p>
-    </article>
-    <article class="card">
-      <h3>Запуск направления</h3>
-      <p>Всё необходимое, чтобы запустить олимпиадное направление внутри школы.</p>
-    </article>
-    <article class="card card-summary">
-      <h3>Составляющие программы</h3>
-      <p>Программа · педагоги · методическое сопровождение · платформа · олимпиадная траектория</p>
-    </article>
+  <div class="strip">
+    <h3>Всё необходимое, чтобы запустить<br>олимпиадное направление внутри школы.</h3>
+    <p>Программа · педагоги · методическое сопровождение · платформа · олимпиадная траектория</p>
   </div>
+  <div class="slide-foot">03</div>
 </section>
+</div>
 
 <!-- SLIDE 4 — RESULTS -->
-<section id="results" class="section section-results">
-  <div class="section-head">
-    <div class="eyebrow">04 · Результаты</div>
-    <h2>Результаты для учеников и школы</h2>
-    <p class="lede">Олимпиадное направление с младших классов — для результатов сегодня и возможностей в будущем для учеников.</p>
-  </div>
+<section id="results" class="slide">
+  <div class="slide-num">04</div>
+  <div class="slide-badge">Для Школы №&nbsp;1520<br>имени Капцовых</div>
+  <h2 class="slide-title">Результаты для учеников и школы</h2>
+  <p class="slide-lede">Олимпиадное направление с младших классов — для результатов сегодня и возможностей в будущем для учеников.</p>
 
-  <div class="results-grid">
+  <div class="results">
     <article class="result">
       <h3>Математическое мышление</h3>
       <p class="result-lead">Не только решение по образцу, а умение думать, искать идеи и доказывать.</p>
@@ -158,7 +251,7 @@
     </article>
     <article class="result">
       <h3>Фундамент для дальнейшего обучения</h3>
-      <p class="result-lead">Развитое математическое мышление и опыт решения нестандартных задач уже сейчас закладывают основу для успешного обучения в средней и старшей школе и дают дополнительные возможности при поступлении в сильные школы и вузы.</p>
+      <p class="result-lead">Развитое математическое мышление и опыт решения нестандартных задач уже сейчас закладывают основу для успешного обучения в средней и старшей школе.</p>
       <ul>
         <li>Успешная подготовка к ОГЭ и ЕГЭ по математике</li>
         <li>Дополнительные баллы при поступлении за олимпиадные достижения</li>
@@ -176,18 +269,20 @@
       </ul>
     </article>
   </div>
+  <div class="slide-foot">04</div>
 </section>
 
 <!-- SLIDE 5 — LAUNCH -->
-<section id="launch" class="section section-launch">
-  <div class="section-head">
-    <div class="eyebrow">05 · Процесс</div>
-    <h2>Как происходит запуск</h2>
-  </div>
+<div class="slide-tint-wrap">
+<section id="launch" class="slide slide-tint">
+  <div class="slide-num">05</div>
+  <div class="slide-badge">Для Школы №&nbsp;1520<br>имени Капцовых</div>
+  <h2 class="slide-title">Как происходит запуск</h2>
 
-  <div class="phase">
-    <div class="phase-tag">Этап 1</div>
-    <div class="phase-body">
+  <div class="phases">
+    <div class="phase">
+      <div class="phase-num">01</div>
+      <div class="phase-tag">Первый месяц</div>
       <h3>Интеграция и старт</h3>
       <p class="phase-lead">Вместе с командой «Пифагоровых штанов» запускаем направление в вашей школе и настраиваем все процессы.</p>
       <div class="phase-grid">
@@ -197,34 +292,45 @@
         <div><h4>Школа</h4><p>Настраиваем расписание, технические процессы и взаимодействие с вашей командой.</p></div>
       </div>
     </div>
-  </div>
 
-  <div class="phase">
-    <div class="phase-tag">Этап 2</div>
-    <div class="phase-body">
+    <div class="phase">
+      <div class="phase-num">02</div>
+      <div class="phase-tag">В течение учебного года</div>
       <h3>Обучение преподавателей и сопровождение учеников</h3>
-      <p class="phase-lead">В течение года методическая команда «Пифагоровых штанов» ведёт преподавателей по программе, отслеживает процесс и помогает решать вопросы по ученикам и работе с семьями.</p>
+      <p class="phase-lead">В течение года методическая команда ведёт преподавателей по программе, отслеживает процесс и помогает решать вопросы по ученикам и работе с семьями.</p>
       <div class="phase-grid">
-        <div><h4>Обучение преподавателей</h4><p>Регулярные методические встречи, подготовка к темам, разбор сложных задач и результатов занятий.</p></div>
+        <div><h4>Обучение преподавателей</h4><p>Регулярные методические встречи, подготовка к темам, разбор сложных задач.</p></div>
         <div><h4>Прогресс учеников</h4><p>Помогаем отслеживать динамику, корректировать уровень и выстраивать дальнейшую траекторию.</p></div>
-        <div><h4>Работа с родителями</h4><p>Консультируем, отвечаем на вопросы семей, объясняем результаты и даём рекомендации по обучению.</p></div>
+        <div><h4>Работа с родителями</h4><p>Консультируем, отвечаем на вопросы семей, объясняем результаты и даём рекомендации.</p></div>
         <div><h4>Гибкость</h4><p>Если ученики приходят в течение года, помогаем определить уровень и скорректировать маршрут.</p></div>
       </div>
-      <p class="phase-note">Методическая команда «Пифагоровых штанов» сопровождает направление в течение всего года.</p>
     </div>
   </div>
-</section>
 
-<!-- SLIDE 6 — PRICING -->
-<section id="pricing" class="section section-pricing">
-  <div class="section-head">
-    <div class="eyebrow">06 · Стоимость</div>
-    <h2>Основная модель</h2>
-    <p class="lede">Олимпиадное направление ведёт команда Школы имени Капцовых. «Пифагоровы штаны» обеспечивают готовую образовательную систему: программу, цифровую платформу, подготовку преподавателей и методическое сопровождение в течение всего года.</p>
+  <div class="timeline">
+    <div>Старт</div><div></div>
+    <div>1 месяц</div><div></div>
+    <div>Весь год</div>
   </div>
 
+  <div class="strip">
+    <h3>Методическая команда «Пифагоровых штанов» сопровождает направление в течение всего года.</h3>
+    <p>Обучение · сопровождение · работа с семьями · гибкость</p>
+  </div>
+  <div class="slide-foot">05</div>
+</section>
+</div>
+
+<!-- SLIDE 6 — PRICING -->
+<section id="pricing" class="slide">
+  <div class="slide-num">06</div>
+  <div class="slide-badge">Для Школы №&nbsp;1520<br>имени Капцовых</div>
+  <h2 class="slide-title">Стоимость</h2>
+  <p class="slide-sub">Основная модель — олимпиадное направление ведёт команда Школы имени Капцовых</p>
+  <p class="slide-lede">«Пифагоровы штаны» обеспечивают готовую образовательную систему: программу, цифровую платформу, подготовку преподавателей и методическое сопровождение в течение всего года.</p>
+
   <div class="price-cards">
-    <div class="price-card price-card-one-off">
+    <div class="price-card">
       <div class="price-tag">Разово при запуске</div>
       <div class="price-amount">120 000&nbsp;₽</div>
       <p>Интеграция и запуск направления. Диагностика, формирование групп, подключение команды, учеников и родителей, настройка процессов.</p>
@@ -234,37 +340,48 @@
       <div class="price-tag">Ежемесячно</div>
       <div class="price-amount">15 000&nbsp;₽<span class="price-unit">/мес.</span></div>
       <p class="price-under">до 10 учеников</p>
-      <p class="price-extra">+ 2 000 ₽ / мес. за каждого ученика сверх 10</p>
+      <div class="price-extra">+ 2 000 ₽ / мес. за каждого ученика сверх 10</div>
       <p>Программа, цифровая платформа, методическая подготовка преподавателей и сопровождение в течение года.</p>
     </div>
   </div>
 
+  <div class="calendar-title">Как строится учебный год</div>
   <div class="calendar">
-    <div class="cal-item"><div class="cal-month">Сентябрь</div><p>Подготовка учебного цикла. Диагностика, формирование групп, подготовка преподавателей, подключение семей.</p></div>
-    <div class="cal-item"><div class="cal-month">Октябрь&nbsp;—&nbsp;Май</div><p>Основная программа. 28 занятий, цифровая платформа, методическое сопровождение, олимпиадная траектория.</p></div>
-    <div class="cal-item"><div class="cal-month">Июнь&nbsp;—&nbsp;Август</div><p>Летний образовательный трек. Видеокурс для самостоятельного прохождения, доступ к платформе, поддержка и рекомендации.</p></div>
+    <div class="cal-item">
+      <div class="cal-month">Сентябрь</div>
+      <p>Подготовка учебного цикла. Диагностика, формирование групп, подготовка преподавателей, подключение семей.</p>
+    </div>
+    <div class="cal-item">
+      <div class="cal-month">Октябрь&nbsp;—&nbsp;Май</div>
+      <p>Основная программа. 28 занятий, цифровая платформа, методическое сопровождение, олимпиадная траектория.</p>
+    </div>
+    <div class="cal-item">
+      <div class="cal-month">Июнь&nbsp;—&nbsp;Август</div>
+      <p>Летний образовательный трек. Видеокурс для самостоятельного прохождения, доступ к платформе, поддержка и рекомендации.</p>
+    </div>
   </div>
 
-  <p class="footnote">В первый год сентябрь включает первоначальную интеграцию системы; в последующие годы — подготовку нового учебного цикла.</p>
+  <p class="slide-lede" style="margin-top:26px; font-size:14px; color:var(--ink-500);">В первый год сентябрь включает первоначальную интеграцию системы; в последующие годы — подготовку нового учебного цикла.</p>
+  <div class="slide-foot">06</div>
 </section>
 
 <!-- SLIDE 7 — ECONOMY -->
-<section id="economy" class="section section-economy">
-  <div class="section-head">
-    <div class="eyebrow">07 · Экономика</div>
-    <h2>Пример экономики направления</h2>
-    <p class="lede">При проведении занятий преподавателями Школы № 1520 имени Капцовых.</p>
-    <p class="sub-lede">28 занятий (октябрь&nbsp;—&nbsp;май) · стоимость одного занятия для ребёнка — 2 500 ₽</p>
-  </div>
+<div class="slide-tint-wrap">
+<section id="economy" class="slide slide-tint">
+  <div class="slide-num">07</div>
+  <div class="slide-badge">Для Школы №&nbsp;1520<br>имени Капцовых</div>
+  <h2 class="slide-title">Пример экономики направления</h2>
+  <p class="slide-sub">При проведении занятий преподавателями Школы № 1520 имени Капцовых</p>
+  <p class="slide-lede">28 занятий (октябрь&nbsp;—&nbsp;май) · стоимость одного занятия для ребёнка — 2 500 ₽</p>
 
   <div class="table-wrap">
     <table class="econ-table">
       <thead>
         <tr>
           <th>Учеников</th>
-          <th>Выручка программы<br>за учебный год</th>
-          <th>Стоимость ПШ<br>первый год</th>
-          <th>Стоимость ПШ<br>последующие годы</th>
+          <th>Выручка программы за учебный год</th>
+          <th>Стоимость ПШ · первый год</th>
+          <th>Стоимость ПШ · последующие годы</th>
         </tr>
       </thead>
       <tbody>
@@ -276,16 +393,18 @@
     </table>
   </div>
 
-  <p class="footnote">Расчёт приведён для модели, в которой занятия проводят преподаватели Школы № 1520 имени Капцовых. Выручка рассчитана для программы из 28 занятий (октябрь — май) при стоимости одного занятия для ребёнка 2 500 ₽. Стоимость программы для учеников школа определяет самостоятельно.</p>
+  <p class="slide-lede" style="margin-top:24px; font-size:13.5px; color:var(--ink-500);">Расчёт приведён для модели, в которой занятия проводят преподаватели Школы № 1520 имени Капцовых. Выручка рассчитана для программы из 28 занятий (октябрь — май) при стоимости одного занятия для ребёнка 2 500 ₽. Стоимость программы для учеников школа определяет самостоятельно.</p>
+  <div class="slide-foot">07</div>
 </section>
+</div>
 
 <!-- SLIDE 8 — ALT MODEL -->
-<section id="alt" class="section section-alt">
-  <div class="section-head">
-    <div class="eyebrow">08 · Альтернативная модель</div>
-    <h2>Занятия ведут преподаватели «Пифагоровых штанов»</h2>
-    <p class="lede">К стоимости основной модели добавляется:</p>
-  </div>
+<section id="alt" class="slide">
+  <div class="slide-num">08</div>
+  <div class="slide-badge">Для Школы №&nbsp;1520<br>имени Капцовых</div>
+  <h2 class="slide-title">Альтернативная модель</h2>
+  <p class="slide-sub">Занятия ведут преподаватели «Пифагоровых штанов»</p>
+  <p class="slide-lede">К стоимости основной модели добавляется:</p>
 
   <div class="alt-cards">
     <div class="alt-card">
@@ -306,16 +425,17 @@
     <div class="alt-example-row alt-example-total"><span>Итого за первый год</span><b>490 000&nbsp;₽</b></div>
   </div>
 
-  <p class="footnote">Альтернативная модель отличается от основной только тем, что проведение занятий берёт на себя команда «Пифагоровых штанов».</p>
+  <p class="slide-lede" style="margin-top:22px; font-size:13.5px; color:var(--ink-500);">Альтернативная модель отличается от основной только тем, что проведение занятий берёт на себя команда «Пифагоровых штанов».</p>
+  <div class="slide-foot">08</div>
 </section>
 
 <!-- SLIDE 9 — CURRICULUM FIT -->
-<section id="curriculum" class="section section-curriculum">
-  <div class="section-head">
-    <div class="eyebrow">09 · Программа</div>
-    <h2>Как олимпиадная математика сочетается со школьной программой?</h2>
-    <p class="lede">Школьная и олимпиадная программы идут параллельно и дополняют друг друга.</p>
-  </div>
+<div class="slide-tint-wrap">
+<section id="curriculum" class="slide slide-tint">
+  <div class="slide-num">09</div>
+  <div class="slide-badge">Для Школы №&nbsp;1520<br>имени Капцовых</div>
+  <h2 class="slide-title">Сочетание с программой</h2>
+  <p class="slide-sub">Школьная и олимпиадная программы идут параллельно и дополняют друг друга.</p>
 
   <div class="curr-grid">
     <article class="curr-card">
@@ -345,18 +465,17 @@
       <p>Формат и интенсивность определяем вместе со школой — с учётом её задач и расписания.</p>
     </article>
   </div>
+  <div class="slide-foot">09</div>
 </section>
+</div>
 
 <!-- SLIDE 10 — CONTACT -->
-<section id="contact" class="section section-contact">
-  <div class="section-head">
-    <div class="eyebrow">10 · Контакты</div>
-    <h2>Свяжитесь с нами</h2>
-    <p class="lede">Для Школы № 1520 имени Капцовых</p>
-  </div>
+<section id="contact" class="slide">
+  <div class="slide-num">10</div>
+  <div class="slide-badge">Для Школы №&nbsp;1520<br>имени Капцовых</div>
+  <h2 class="slide-title">Контакты</h2>
 
-  <div class="contact-card">
-    <div class="contact-avatar">АЖ</div>
+  <div class="contact-slide">
     <div class="contact-body">
       <div class="contact-name">Анастасия Жукова</div>
       <div class="contact-role">
@@ -366,28 +485,43 @@
       </div>
       <div class="contact-links">
         <a href="tel:+79853330968" class="contact-link">
-          <span class="cl-label">Телефон</span>
-          <span class="cl-val">+7 985 333 09 68</span>
+          <div class="cl-icon"><svg width="22" height="22"><use href="#i-phone"/></svg></div>
+          <div>
+            <span class="cl-val">+7 985 333 09 68</span>
+            <span class="cl-label">Телефон</span>
+          </div>
         </a>
         <a href="mailto:pifshtany@gmail.com" class="contact-link">
-          <span class="cl-label">Email</span>
-          <span class="cl-val">pifshtany@gmail.com</span>
+          <div class="cl-icon"><svg width="22" height="22"><use href="#i-mail"/></svg></div>
+          <div>
+            <span class="cl-val">pifshtany@gmail.com</span>
+            <span class="cl-label">Email</span>
+          </div>
         </a>
         <a href="https://t.me/vzuzh" class="contact-link" target="_blank" rel="noopener">
-          <span class="cl-label">Telegram (личный)</span>
-          <span class="cl-val">t.me/vzuzh</span>
+          <div class="cl-icon"><svg width="22" height="22"><use href="#i-tg"/></svg></div>
+          <div>
+            <span class="cl-val">t.me/vzuzh</span>
+            <span class="cl-label">Личный Telegram</span>
+          </div>
         </a>
         <a href="https://t.me/zhukova_edtech" class="contact-link" target="_blank" rel="noopener">
-          <span class="cl-label">Канал об образовании и олимпиадах</span>
-          <span class="cl-val">t.me/zhukova_edtech</span>
+          <div class="cl-icon"><svg width="22" height="22"><use href="#i-tg"/></svg></div>
+          <div>
+            <span class="cl-val">t.me/zhukova_edtech</span>
+            <span class="cl-label">Канал об образовании и олимпиадах</span>
+          </div>
         </a>
       </div>
     </div>
+    <div class="contact-photo" role="img" aria-label="Анастасия Жукова"></div>
   </div>
+  <div class="slide-foot">10</div>
 </section>
 
+<!-- FOOTER (mirrors deck's blue bottom bar) -->
 <footer class="site-foot">
-  <div class="foot-brand">
+  <div>
     <div class="foot-title">Пифагоровы штаны</div>
     <div class="foot-tag">Сильная математика для больших возможностей</div>
   </div>
